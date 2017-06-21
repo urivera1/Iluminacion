@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kb-project>
+ <depends-on-projects/>
+ <used-by-projects/>
+ <paths>
+  <path value="C:/Users/OMAR-URL/Documents/workspaces/ado/ws-entero/Demo/WebContent/WEB-INF/lib/postgresql-42.1.1.jre6.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/catalina.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/tomcat-jdbc.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/ecj-4.6.1.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/el-api.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/websocket-api.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/tomcat-i18n-es.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/catalina-ant.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/annotations-api.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/catalina-storeconfig.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/catalina-ha.jar"/>
+  <path value="C:/Users/OMAR-URL/Documents/workspaces/ado/ws-entero/Demo/WebContent/WEB-INF/lib/primefaces-6.1.jar">
+   <libraries>
+    <library class="faces-config">
+     <id class="model-object"
+      path="FileSystems/lib-primefaces-6.1.jar/meta-inf/faces-config.xml" project="Demo"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-primefaces-6.1.jar/meta-inf/primefaces-p.taglib.xml" project="Demo"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-primefaces-6.1.jar/meta-inf/primefaces-pm.taglib.xml" project="Demo"/>
+    </library>
+   </libraries>
+  </path>
+  <path value="C:/apache-tomcat-8.0.43/lib/jasper.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/catalina-tribes.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/jasper-el.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/tomcat-jni.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/tomcat-util-scan.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/jsp-api.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/tomcat-i18n-ja.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/servlet-api.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/tomcat-util.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/tomcat-i18n-fr.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/tomcat-api.jar"/>
+  <path value="C:/Users/OMAR-URL/Documents/workspaces/ado/ws-entero/Demo/WebContent/WEB-INF/lib/javax.faces.jar">
+   <libraries>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-javax.faces.jar-1/meta-inf/html_basic.tld" project="Demo"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-javax.faces.jar-1/meta-inf/jsf_core.tld" project="Demo"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-javax.faces.jar-1/meta-inf/mojarra_ext.taglib.xml" project="Demo"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-javax.faces.jar-1/meta-inf/mojarra_ext.tld" project="Demo"/>
+    </library>
+   </libraries>
+  </path>
+  <path value="C:/apache-tomcat-8.0.43/lib/tomcat-coyote.jar"/>
+  <path value="/Demo/WebContent/WEB-INF/faces-config.xml">
+   <libraries>
+    <library class="faces-config">
+     <id class="model-object"
+      path="FileSystems/WEB-INF/faces-config.xml" project="Demo"/>
+    </library>
+   </libraries>
+  </path>
+  <path value="C:/apache-tomcat-8.0.43/lib/tomcat-websocket.jar"/>
+  <path value="C:/apache-tomcat-8.0.43/lib/tomcat-dbcp.jar"/>
+ </paths>
+ <validation>
+  <el/>
+ </validation>
+ <aliases/>
+ <includes/>
+ <uris/>
+</kb-project>

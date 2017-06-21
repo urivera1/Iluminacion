@@ -1,0 +1,89 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	template="/plantilla/principal.xhtml">
+	<f:loadBundle basename="resources.application" var="msg" />
+	<ui:define name="content">
+		<div class="content-wrapper">
+			<section class="content-header">
+				<ol class="breadcrumb">
+					<li><a href="#{request.contextPath}/pages/inicio.xhtml"><i
+							class="fa fa-dashboard"></i> #{msg.lblInicio}</a></li>
+					<li class="active">#{msg.lblProovedores}</li>
+				</ol>
+			</section>
+			<section class="content text-center">
+				<br />
+				<h:form id="form1">
+					<div class="row">
+						<div>
+							<a class="btn btn-success"
+								href="#{request.contextPath}/pages/nuevoproovedor.xhtml">Nuevo
+								proovedor...</a>
+						</div>
+					</div>
+					<br />
+					<p:growl id="growl" showDetail="true" life="4000" />
+					<p:dataTable value="#{beanProovedor.proovedores()}" rows="8" reflow="true"
+						paginator="true" styleClass="table table-condensed"
+						id="proovedores" var="pro">
+						<p:column headerText="Nombre">
+							<p:outputLabel value="#{pro.nombre}" />
+						</p:column>
+						<p:column headerText="Dirección">
+							<h:outputText value="#{pro.direccion}" />
+						</p:column>
+						<p:column headerText="Telefono">
+							<h:outputText value="#{pro.telefono}" />
+						</p:column>
+						<p:column headerText="RFC">
+							<h:outputText value="#{pro.rfc}" />
+						</p:column>
+						<p:column headerText="Estatus" style="text-align:center">
+							<p:commandButton styleClass="btn btn-default"
+								oncomplete="PF('panelUpdate').show()"
+								value="#{pro.estatus.equals('1') ? 'Surtiendo' : 'S/Surtir'}"
+								update="form1:transa" />
+						</p:column>
+						<p:column headerText="Detalle"
+							style="width:80px;text-align: center">
+							<p:commandButton icon="fa fa-search"
+								oncomplete="PF('det').show()"
+								actionListener="#{beanProovedor.buscaDetalleprov(pro.idProovedor)}"
+								update="form1:detProv">
+							</p:commandButton>
+						</p:column>
+					</p:dataTable>
+					<p:dialog header="Detalle del proovedor" widgetVar="det"
+						modal="true" width="300px">
+						<p:dataTable var="mer" id="detProv"
+							value="#{beanProovedor.mercanciaPro()}"
+							styleClass="table table-responsive">
+							<p:column headerText="Descripción">
+								<h:outputText value="#{mer.desc}" />
+							</p:column>
+							<p:column headerText="Precio">
+								<h:outputLabel value="#{mer.precio}" />
+							</p:column>
+						</p:dataTable>
+					</p:dialog>
+					<p:dialog header="Cuadro de confirmacion" widgetVar="panelUpdate" responsive="true"
+						modal="true" width="420px">
+						<p:outputLabel  value="Que transacción desea realizar?" />
+						<p:panelGrid id="transa" columns="2" layout="grid" 
+							styleClass="table">
+							<p:commandButton value="Actualizar Estatus"
+								styleClass="btn btn-default"></p:commandButton>
+							<p:commandButton value="Eliminar Proovedor"
+								styleClass="btn btn-default"></p:commandButton>
+						</p:panelGrid>
+					</p:dialog>
+				</h:form>
+			</section>
+		</div>
+	</ui:define>
+</ui:composition>

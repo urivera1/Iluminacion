@@ -1,0 +1,7 @@
+<classpath>
+  <container id="Demo!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="C:/Users/OMAR-URL/Documents/workspaces/ado/ws-entero/Demo/WebContent/WEB-INF/lib/primefaces-6.1.jar">
+      <source-attachment-path>C:/Users/OMAR-URL/.m2/repository/org/primefaces/primefaces/6.1/primefaces-6.1-sources.jar</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

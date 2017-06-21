@@ -1,0 +1,47 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/plantilla/principal.xhtml">
+	<f:loadBundle basename="resources.application" var="msg" />
+	<ui:define name="content">
+		<div class="content-wrapper">
+			<section class="content-header">
+				<ol class="breadcrumb">
+					<li><a href="#{request.contextPath}/pages/inicio.xhtml"><i
+							class="fa fa-dashboard"></i> #{msg.lblInicio}</a></li>
+				</ol>
+			</section>
+			<section class="content">
+				<h:form id="nuevopersonal">
+					<p:growl id="growl" showDetail="true" life="4000" />
+					<p:panelGrid columns="6" layout="grid"
+						columnClasses="ui-grid-col-2,ui-grid-col-10">
+
+						<p:outputLabel for="name" value="Nombre:"></p:outputLabel>
+						<p:inputText id="name"></p:inputText>
+
+						<p:outputLabel for="tipo" value="Tipo de Usuario:"></p:outputLabel>
+						<p:selectOneMenu id="tipo" required="true">
+							<f:selectItem itemLabel="--Selecciona--" itemValue="0" />
+						</p:selectOneMenu>
+
+						<p:outputLabel for="estatus" value="Estatus:"></p:outputLabel>
+						<p:selectOneMenu id="estatus" required="true">
+							<f:selectItem itemLabel="--Selecciona--" itemValue="0" />
+						</p:selectOneMenu>
+						
+						<br/><br/><br/><br/><br/><br/>
+						
+						<p:outputLabel for="cve" value="Clave de acceso:"></p:outputLabel>
+						<p:inputText id="cve" required="true"></p:inputText>
+						
+						<p:outputLabel for="nip" value="NIP:"></p:outputLabel>
+						<p:inputText id="nip" required="true"></p:inputText>
+					</p:panelGrid>
+				</h:form>
+			</section>
+		</div>
+	</ui:define>
+</ui:composition>

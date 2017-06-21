@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+C:\Users\OMAR-URL\Documents\workspaces\ado\proyecto con tomcat\ws-entero\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+209212502.index
+2405467291.index
+1749849059.index
+607331296.index
+1828026965.index
+950529936.index

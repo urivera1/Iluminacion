@@ -1,0 +1,74 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	template="/plantilla/principal.xhtml">
+	<f:loadBundle basename="resources.application" var="msg" />
+	<ui:define name="content">
+		<div class="content-wrapper">
+			<section class="content-header">
+				<ol class="breadcrumb">
+					<li><a href="#{request.contextPath}/pages/inicio.xhtml"><i
+							class="fa fa-dashboard"></i> #{msg.lblInicio}</a></li>
+					<li class="active">#{msg.lblProovedores}</li>
+				</ol>
+			</section>
+			<section class="content">
+				<br />
+				<h:form id="form1">
+					<div class="row">
+						<div class="text-center">
+							<p:commandButton styleClass="btn btn-success"
+								value="Agregar nuevo Proovedor..."></p:commandButton>
+						</div>
+					</div>
+					<br />
+					<p:growl id="growl" showDetail="true" life="4000" />
+					<p:dataTable value="#{beanProovedor.proovedores()}"
+						styleClass="table table-responsive" id="proovedores" var="pro">
+						<p:column headerText="Nombre">
+							<h:outputText value="#{pro.nombre}" />
+						</p:column>
+						<p:column headerText="Dirección">
+							<h:outputText value="#{pro.direccion}" />
+						</p:column>
+						<p:column headerText="Telefono">
+							<h:outputText value="#{pro.telefono}" />
+						</p:column>
+						<p:column headerText="RFC">
+							<h:outputText value="#{pro.rfc}" />
+						</p:column>
+						<p:column headerText="Estatus" style="text-align:center">
+							<c:if test="#{pro.estatus != 0}">
+								<h:outputText styleClass="btn btn-primary" value="Activo" />
+							</c:if>
+							<c:if test="#{pro.estatus == 0}">
+								<h:outputText styleClass="btn-default" value="Inactivo" />
+							</c:if>
+						</p:column>
+						<p:column headerText="Detalle"
+							style="width:100px;text-align: center">
+							<p:commandLink oncomplete="PF('det').show()">
+								<p:ajax
+									listener="#{beanProovedor.buscaDetalleProv(pro.idProovedor)}"
+									update="detprov"></p:ajax>
+								<i class="fa fa-search" />
+							</p:commandLink>
+						</p:column>
+					</p:dataTable>
+					<p:dialog widgetVar="det" modal="true" resizable="false">
+						<p:dataTable var="mer" id="detProv"
+							value="#{beanProovedor.mercanciaPro()}"
+							styleClass="table table-responsive">
+							<p:column headerText="Descripción"></p:column>
+							<p:column headerText="Precio"></p:column>
+						</p:dataTable>
+					</p:dialog>
+				</h:form>
+			</section>
+		</div>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,23 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/plantilla/principal.xhtml">
+	<f:loadBundle basename="resources.application" var="msg" />
+	<ui:define name="content">
+		<div class="content-wrapper">
+			<section class="content-header">
+				<ol class="breadcrumb">
+					<li><a href="#{request.contextPath}/pages/inicio.xhtml"><i
+							class="fa fa-dashboard"></i> #{msg.lblInicio}</a></li>
+				</ol>
+			</section>
+			<section class="content">
+				<h:form id="nuevopersonal">
+					<p:growl id="growl" showDetail="true" life="4000" />
+				</h:form>
+			</section>
+		</div>
+	</ui:define>
+</ui:composition>

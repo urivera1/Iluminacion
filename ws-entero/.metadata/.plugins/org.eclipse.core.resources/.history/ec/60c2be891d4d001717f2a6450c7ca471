@@ -1,0 +1,62 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/plantilla/principal.xhtml">
+	<f:loadBundle basename="resources.application" var="msg" />
+	<ui:define name="content">
+		<div class="content-wrapper">
+			<section class="content-header">
+				<ol class="breadcrumb">
+					<li><a href="#{request.contextPath}/pages/inicio.xhtml"><i
+							class="fa fa-dashboard"></i> #{msg.lblpersonal}</a></li>
+				</ol>
+			</section>
+			<section class="content">
+				<br />
+				<h:form id="nuevopersonal">
+					<p:growl id="growl" showDetail="true" life="4000" />
+					<h3><strong>#{msg.lblpersonal}</strong></h3>
+					<p:panelGrid columns="4" layout="grid">
+
+						<p:outputLabel for="name" value="Nombre:"></p:outputLabel>
+						<p:inputText id="name" required="true"
+							value="#{beanUsuario.txtNombre}"></p:inputText>
+
+						<p:outputLabel value="Tipo de Usuario:"></p:outputLabel>
+						<p:selectOneMenu id="tipo" required="true"
+							value="#{beanUsuario.cboTipoUs}">
+							<f:selectItem itemLabel="--Selecciona--" itemValue="0" />
+							<f:selectItems value="#{beanUsuario.listaTipo()}" var="tip"
+								itemLabel="#{tip.descripcion}" itemValue="#{tip.idTipo}" />
+						</p:selectOneMenu>
+
+						<p:outputLabel for="cve" value="Clave de acceso:"></p:outputLabel>
+						<p:inputText id="cve" required="true"
+							value="#{beanUsuario.txtCve}"></p:inputText>
+
+						<p:outputLabel for="nip" value="NIP:"></p:outputLabel>
+						<p:inputText id="nip" required="true"
+							value="#{beanUsuario.txtNip}"></p:inputText>
+
+						<p:outputLabel for="estatus" value="Estatus:"></p:outputLabel>
+						<p:selectOneMenu id="estatus" required="true"
+							value="#{beanUsuario.cboEstatus}">
+							<f:selectItem itemLabel="--Selecciona--" itemValue="-1" />
+							<f:selectItem itemLabel="Activo" itemValue="1" />
+							<f:selectItem itemLabel="Inactivo" itemValue="0" />
+						</p:selectOneMenu>
+					</p:panelGrid>
+					<hr />
+					<p:commandButton id="guardar" value="Guardar..."
+						styleClass="btn btn-success" ajax="false" action="#{beanUsuario.guardaDatosUsuario()}"
+						update="growl"></p:commandButton>
+				</h:form>
+				<p:blockUI block="nuevopersonal" trigger=":nuevopersonal:guardar">
+					<!-- <p:graphicImage name="img/loading_2.gif" /> -->
+				</p:blockUI>
+			</section>
+		</div>
+	</ui:define>
+</ui:composition>

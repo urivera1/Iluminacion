@@ -1,0 +1,110 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	template="/plantilla/principal.xhtml">
+	<f:loadBundle basename="resources.application" var="msg" />
+	<ui:define name="content">
+		<div class="content-wrapper">
+			<section class="content-header">
+				<ol class="breadcrumb">
+					<li><a href="#{request.contextPath}/pages/inicio.xhtml"><i
+							class="fa fa-dashboard"></i> #{msg.lblInicio}</a></li>
+					<li class="active">#{msg.lblNuevoPro}</li>
+				</ol>
+			</section>
+			<section class="content">
+				<script type="text/javascript">
+					function mostrar(){
+					document.getElementById('oculto').style.display = 'block';}
+				</script>
+				<br />
+				<h:form id="nuevo">
+					<p:growl id="growl" showDetail="true" life="4000" />
+					<h3><strong>#{msg.lblNuevoPro}</strong></h3>
+					<p:panelGrid columns="4"
+						columnClasses="ui-grid-col-2,ui-grid-col-4" layout="grid">
+
+						<p:outputLabel for="nombre" value="Nombre:"></p:outputLabel>
+						<p:inputText id="nombre" value="#{beanProovedor.txtNombre}"
+							required="true" requiredMessage="Tiene que especificar un nombre"></p:inputText>
+
+						<p:outputLabel for="direccion" value="Dirección"></p:outputLabel>
+						<p:inputText id="direccion" value="#{beanProovedor.txtDireccion}"
+							required="true"
+							requiredMessage="tiene que especificar una dirección"></p:inputText>
+
+						<p:outputLabel for="estatus" value="Estatus:"></p:outputLabel>
+						<p:selectOneMenu style="width:200px" id="estatus"
+							requiredMessage="tiene que seleccionar un estatus"
+							value="#{beanProovedor.cboEstatus}" required="true">
+							<f:selectItem itemLabel="--Selecciona--" itemValue="" />
+							<f:selectItem itemLabel="Activo" itemValue="1" />
+							<f:selectItem itemLabel="Inactivo" itemValue="0" />
+						</p:selectOneMenu>
+
+						<p:outputLabel for="telefono" value="Telefono:"></p:outputLabel>
+						<p:inputText id="telefono"
+							requiredMessage="tiene que especificar un telefono"
+							value="#{beanProovedor.txtTelefono}" />
+
+						<p:outputLabel for="rfc" value="RFC:"></p:outputLabel>
+						<p:inputText id="rfc"
+							requiredMessage="tiene que especificar un RFC"
+							value="#{beanProovedor.txtRfc}" required="true"></p:inputText>
+
+						<p:commandLink oncomplete="mostrar();" validateClient="true"
+							value="Agregar Productos" styleClass="btn btn-info"></p:commandLink>
+					</p:panelGrid>
+					<br />
+					<div id="oculto" style='display: none;'>
+						<p:panelGrid columns="4" styleClass="table" columnClasses="ui-grid-col-2,ui-grid-col-4" layout="grid">
+
+							<p:outputLabel for="mercancia" value="Producto:"></p:outputLabel>
+							<p:inputText id="mercancia" value="#{beanProovedor.txtMercancia}"
+								required="true" requiredMessage="producto no especificado"></p:inputText>
+
+							<p:outputLabel for="precio" value="Precio del Producto"></p:outputLabel>
+							<p:inputNumber id="precio"
+								requiredMessage="tiene que especificar un Precio"
+								value="#{beanProovedor.txtprecio}"></p:inputNumber>								
+
+							<p:commandButton value="Agregar.."
+								action="#{beanProovedor.agregaproductos()}"
+								update="nuevo:agregaMercancia nuevo:mercancia nuevo:precio"
+								styleClass="btn btn-info" icon="fa fa-check"></p:commandButton>
+
+							<p:dataTable id="agregaMercancia"
+								value="#{beanProovedor.listaproductos()}" var="prod"
+								styleClass="table table-responsive">
+								<p:column headerText="Descripción">
+									<p:outputLabel value="#{prod.desc}"></p:outputLabel>
+								</p:column>
+								<p:column headerText="Precio">
+									<p:outputLabel value="#{prod.precio}"></p:outputLabel>
+								</p:column>
+							</p:dataTable>
+</br>
+							<h:panelGrid columns="4" styleClass="table">
+								<h:outputText value="" />
+								<p:commandButton id="guardar" styleClass="btn btn-success"
+									value="Guardar..." icon="fa fa-save" ajax="false"
+									action="#{beanProovedor.guardarDatos()}" update="growl"></p:commandButton>
+								<h:outputText value="" />
+								<a class="btn btn-danger"
+									onclick="location.href='#{request.contextPath}/pages/inicio.xhtml'">Cancelar...<i
+									class="fa fa-arrow-circle-right"></i></a>
+							</h:panelGrid>
+						</p:panelGrid>
+					</div>
+				</h:form>
+				<p:blockUI block="nuevo" trigger=":nuevo:guardar">
+					<!-- <p:graphicImage name="img/loading_2.gif" /> -->
+				</p:blockUI>
+			</section>
+		</div>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,11 @@
+127.0.0.1 - - [13/Jun/2017:16:26:51 -0500] "GET / HTTP/1.1" 404 1004
+0:0:0:0:0:0:0:1 - - [13/Jun/2017:16:27:03 -0500] "GET /Demo/ HTTP/1.1" 200 3309
+0:0:0:0:0:0:0:1 - - [13/Jun/2017:16:27:36 -0500] "POST /Demo/index.xhtml HTTP/1.1" 200 3321
+0:0:0:0:0:0:0:1 - - [13/Jun/2017:16:32:58 -0500] "GET /Demo/index.xhtml HTTP/1.1" 200 3308
+0:0:0:0:0:0:0:1 - - [13/Jun/2017:16:33:09 -0500] "POST /Demo/index.xhtml HTTP/1.1" 200 3319
+0:0:0:0:0:0:0:1 - - [13/Jun/2017:16:34:41 -0500] "GET /Demo/index.xhtml HTTP/1.1" 200 3309
+0:0:0:0:0:0:0:1 - - [13/Jun/2017:16:34:44 -0500] "POST /Demo/index.xhtml HTTP/1.1" 200 3424
+0:0:0:0:0:0:0:1 - - [13/Jun/2017:16:34:44 -0500] "GET /Demo/javax.faces.resource/images/ui-icons_2e83ff_256x240.png.xhtml?ln=primefaces-aristo HTTP/1.1" 200 4369
+0:0:0:0:0:0:0:1 - - [13/Jun/2017:16:34:44 -0500] "GET /Demo/javax.faces.resource/messages/messages.png.xhtml?ln=primefaces&v=6.1 HTTP/1.1" 200 27245
+0:0:0:0:0:0:0:1 - - [13/Jun/2017:16:34:54 -0500] "POST /Demo/index.xhtml HTTP/1.1" 200 3420
+0:0:0:0:0:0:0:1 - - [13/Jun/2017:16:35:12 -0500] "POST /Demo/index.xhtml HTTP/1.1" 200 3423

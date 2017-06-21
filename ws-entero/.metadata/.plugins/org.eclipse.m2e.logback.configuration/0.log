@@ -1,0 +1,8 @@
+2017-05-12 15:46:00,025 [LiveReload Server at localhost] INFO  org.eclipse.jetty.server.Server - jetty-8.1.14.v20131031
+2017-05-12 15:46:00,078 [LiveReload Server at localhost] INFO  o.e.jetty.server.AbstractConnector - Started SelectChannelConnector@0.0.0.0:35729
+2017-05-12 15:46:00,546 [LiveReload-Proxy-Server-58678:8080] INFO  org.eclipse.jetty.server.Server - jetty-8.1.14.v20131031
+2017-05-12 15:46:00,593 [LiveReload-Proxy-Server-58678:8080] INFO  o.e.jetty.server.AbstractConnector - Started SelectChannelConnector@0.0.0.0:58678
+2017-05-12 15:48:09,067 [Worker-19] INFO  o.e.j.server.handler.ContextHandler - stopped o.e.j.s.ServletContextHandler{/,null}
+2017-05-12 15:48:09,200 [Worker-19] INFO  o.e.j.server.handler.ContextHandler - stopped o.e.j.s.ServletContextHandler{/,null}
+2017-05-16 13:26:41,754 [Worker-71] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/primefaces/primefaces/6.1/primefaces-6.1-sources.jar
+2017-05-16 13:28:13,043 [Worker-71] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/primefaces/primefaces/6.1/primefaces-6.1-sources.jar

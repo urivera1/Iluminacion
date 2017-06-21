@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.lang.Class"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="java.lang.ClassNotFoundException"/>
+<fullyQualifiedTypeName name="javax.annotation.ManagedBean"/>
+<fullyQualifiedTypeName name="com.omar.url.demotienda.ctrl.CtrlLogin"/>
+<fullyQualifiedTypeName name="com.omar.url.demotienda.ctrl.CtrlProovedor"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="com.omar.url.demotienda.utileria.TransaccionesSQL"/>
+<fullyQualifiedTypeName name="com.omar.url.demotienda.entidades.ProovedorDAO"/>
+<fullyQualifiedTypeName name="com.omar.url.demotienda.DTO.MercanciaProovedor"/>
+<fullyQualifiedTypeName name="com.omar.url.demotienda.DTO.Proovedor"/>
+<fullyQualifiedTypeName name="com.omar.url.demotienda.utileria.Mensajeria"/>
+<fullyQualifiedTypeName name="com.omar.url.demotienda.ctrl.CtrlUsuario"/>
+<fullyQualifiedTypeName name="com.omar.url.demotienda.entidades.UsuarioDAO"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="com.omar.url.demotienda.DTO.Tipo_Usuario"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="com.omar.url.demotienda.DTO.Usuario"/>
+<fullyQualifiedTypeName name="java.lang.Boolean"/>
+<fullyQualifiedTypeName name="java.text.NumberFormat"/>
+<fullyQualifiedTypeName name="java.util.Locale"/>
+<fullyQualifiedTypeName name="com.omar.url.demotienda.utileria.Constantes"/>
+<fullyQualifiedTypeName name="javax.faces.bean.ViewScoped"/>
+<fullyQualifiedTypeName name="com.sun.xml.internal.xsom.impl.scd.Iterators.Array"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="com.omar.url.demotienda.beans.Columnas"/>
+<fullyQualifiedTypeName name="com.omar.url.demotienda.ctrl.CtrlAlmacen"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.omar.url.demotienda.utileria.ConexionBD"/>
+<fullyQualifiedTypeName name="com.omar.url.demotienda.entidades.AlmacenDAO"/>
+<fullyQualifiedTypeName name="java.sql.Statement"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.omar.url.demotienda.DTO.Almacen"/>
+<fullyQualifiedTypeName name="javax.faces.bean.ManagedBean"/>
+</qualifiedTypeNameHistroy>

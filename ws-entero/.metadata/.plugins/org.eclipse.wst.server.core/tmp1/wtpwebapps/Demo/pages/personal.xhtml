@@ -1,0 +1,63 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	template="/plantilla/principal.xhtml">
+	<f:loadBundle basename="resources.application" var="msg" />
+	<ui:define name="content">
+		<div class="content-wrapper">
+			<section class="content-header">
+				<ol class="breadcrumb">
+					<li><a href="#{request.contextPath}/pages/inicio.xhtml"><i
+							class="fa fa-dashboard"></i> #{msg.lblInicio}</a></li>
+					<li class="active">#{msg.lblpersonal}</li>
+				</ol>
+			</section>
+			<section class="content">
+				<br />
+				<h:form id="personal">
+					<div class="text-center">
+						<a href="#{request.contextPath}/pages/nuevopersonal.xhtml" class="btn btn-success">Nuevo Usuario...</a>
+					</div>
+					<br/>
+					<p:growl id="growl" showDetail="true" life="4000" />
+					<p:dataTable value="#{beanUsuario.listaUsuarios()}" var="per" reflow="true"
+						rows="7" paginator="true" styleClass="table table-responsive">
+						<p:column headerText="Nombre">
+							<p:outputLabel value="#{per.nombre}"></p:outputLabel>
+						</p:column>
+						<p:column headerText="Clave">
+							<p:outputLabel value="#{per.clave}"></p:outputLabel>
+						</p:column>
+						<p:column headerText="Nip">
+							<p:outputLabel value="#{per.nip}"></p:outputLabel>
+						</p:column>
+						<p:column headerText="Tipo de Usuario">
+							<p:outputLabel value="#{per.tipoUsuario.descripcion}"></p:outputLabel>
+						</p:column>
+						<p:column headerText="Estatus">
+							<p:outputLabel value="#{per.estatus ? 'Activo' : 'Inactivo'}"></p:outputLabel>
+						</p:column>
+						<p:column style="width:80px;text-align: center">
+							<p:commandButton icon="fa fa-trash" oncomplete="PF('delete').show();"></p:commandButton>
+						</p:column>
+					</p:dataTable>
+					<p:dialog header="Cuadro de confirmacion" widgetVar="delete" responsive="true"
+						modal="true" width="420px">
+						<p:outputLabel  value="Desea eliminar a este Usuario?" />
+						<p:panelGrid id="transa" columns="2" layout="grid" 
+							styleClass="table">
+							<p:commandButton value="Si"
+								styleClass="btn btn-default"></p:commandButton>
+							<p:commandButton value="No"
+								styleClass="btn btn-default"></p:commandButton>
+						</p:panelGrid>
+					</p:dialog>
+				</h:form>
+			</section>
+		</div>
+	</ui:define>
+</ui:composition>
